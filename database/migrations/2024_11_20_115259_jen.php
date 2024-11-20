@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('jen', function (Blueprint $table) {
+            $table->char('kode_tjen', 1)->primary();
+            $table->char('nama_tjen', 10);
+            $table->timestamps();
+        });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
-        //
+        Schema::dropIfExists('jen');
     }
 };
